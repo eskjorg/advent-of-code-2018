@@ -1,11 +1,9 @@
 import os
 import numpy as np
 
-
 with open('data/input8.txt', 'r') as f:
     DATA_STR = f.readline().split(" ")
     DATA_INT = list(map(int, DATA_STR))
-
 
 class Node:
 	def __init__(self, parent=None, metadata=None):
@@ -28,20 +26,16 @@ class Node:
 				value += self.childs[metadata - 1].value()
 		return value
 
-
 root = current = Node(metadata=[0])
 node_stack = [[1, 0]]  # [c, m] = [n_childs, n_metadata]
-n_metadata = 0  # Imminent metadata to collect
 
 idx = 0
 while idx < len(DATA_INT):
-	if n_metadata > 0:
+	if node_stack[-1][0] == 0:  # No more children -> collect metadata
+		_, n_metadata = node_stack.pop()
 		current.metadata.extend(DATA_INT[idx: idx + n_metadata])
 		current = current.parent
 		idx += n_metadata
-		n_metadata = 0
-	elif node_stack[-1][0] == 0:
-		_, n_metadata = node_stack.pop()
 	else:
 		node_stack[-1][0] -= 1
 		node_stack.append(DATA_INT[idx: idx + 2])
