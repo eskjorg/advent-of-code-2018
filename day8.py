@@ -6,7 +6,7 @@ with open('data/input8.txt', 'r') as f:
     DATA_INT = list(map(int, DATA_STR))
 
 class Node:
-	def __init__(self, n_children, metadata=None, parent=None):
+	def __init__(self, n_children, metadata, parent=None):
 		self.n_children = n_children
 		self.children = []
 		self.metadata = metadata
@@ -30,7 +30,7 @@ class Node:
 				value += self.children[metadata - 1].value()
 		return value
 
-root = current = Node(1, metadata=[0])
+root = current = Node(n_children=1, metadata=[0])
 
 idx = 0
 while idx < len(DATA_INT):
