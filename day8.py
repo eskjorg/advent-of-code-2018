@@ -2,9 +2,9 @@ import os
 import numpy as np
 
 
-with open('input8.txt', 'r') as f:
+with open('data/input8.txt', 'r') as f:
     DATA_STR = f.readline().split(" ")
-    DATA_INT = map(int, DATA_STR)
+    DATA_INT = list(map(int, DATA_STR))
 
 
 class Node:
