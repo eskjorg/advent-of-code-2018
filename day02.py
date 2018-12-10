@@ -1,7 +1,7 @@
 import os
 from itertools import product
 
-with open('data/input2.txt', 'r') as f:
+with open('data/input02.txt', 'r') as f:
     DATA_STR = [line.rstrip() for line in f.readlines()]
 
 def has_multiple(string, num):

@@ -1,7 +1,7 @@
 import os
 import numpy as np
 
-with open('data/input4.txt', 'r') as f:
+with open('data/input04.txt', 'r') as f:
     DATA_ENTRIES = [line.rstrip() for line in f.readlines()]
 DATA_ENTRIES = sorted(DATA_ENTRIES)
 

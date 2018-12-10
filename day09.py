@@ -2,7 +2,7 @@ import os
 import numpy as np
 from collections import deque
 
-with open('data/input9.txt', 'r') as f:
+with open('data/input09.txt', 'r') as f:
     line = f.readline().split(" ")
     NUM_PLAYERS = int(line[0])
     LAST_MARBLE = int(line[6])

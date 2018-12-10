@@ -1,7 +1,7 @@
 import os
 import numpy as np
 
-with open('data/input8.txt', 'r') as f:
+with open('data/input08.txt', 'r') as f:
     DATA_STR = f.readline().split(" ")
     DATA_INT = list(map(int, DATA_STR))
 

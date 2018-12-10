@@ -1,6 +1,6 @@
 import os
 
-with open('data/input1.txt', 'r') as f:
+with open('data/input01.txt', 'r') as f:
     DATA_STR = f.readlines()
     DATA_INT = list(map(int, DATA_STR))
 
