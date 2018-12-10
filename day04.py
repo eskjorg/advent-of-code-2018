@@ -1,4 +1,3 @@
-import os
 import numpy as np
 
 with open('data/input04.txt', 'r') as f:

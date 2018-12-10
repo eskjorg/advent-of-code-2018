@@ -1,5 +1,3 @@
-import os
-
 with open('data/input01.txt', 'r') as f:
     DATA_STR = f.readlines()
     DATA_INT = list(map(int, DATA_STR))
@@ -12,10 +10,10 @@ frequencies = set()
 
 max_cycle = int((max(DATA_INT) - min(DATA_INT)) / sum(DATA_INT))
 for frequency in np.cumsum(DATA_INT * max_cycle):
-	if frequency in frequencies:
-		doublet = frequency
-		break
-	frequencies.add(frequency)
+    if frequency in frequencies:
+        doublet = frequency
+        break
+    frequencies.add(frequency)
 
 #print("Part 2: ", doublet)
 
@@ -25,10 +23,10 @@ frequencies = set()
 
 frequency = 0
 for delta_f in cycle(DATA_INT):
-	frequency += delta_f
-	if frequency in frequencies:
-		doublet = frequency
-		break
-	frequencies.add(frequency)
+    frequency += delta_f
+    if frequency in frequencies:
+        doublet = frequency
+        break
+    frequencies.add(frequency)
 
 print("Part 2: ", doublet)
