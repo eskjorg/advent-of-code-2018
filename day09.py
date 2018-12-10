@@ -7,10 +7,9 @@ with open('data/input09.txt', 'r') as f:
     LAST_MARBLE = int(line[6])
 
 def play(num_marbles):
-    scores = np.zeros(NUM_PLAYERS)
+    scores = np.zeros(NUM_PLAYERS, dtype=int)
     circle = deque([0])
     current_player = 0
-    
     for marble in range(1, num_marbles + 1):
         if marble % 23:
             circle.rotate(-2)
@@ -19,7 +18,7 @@ def play(num_marbles):
             circle.rotate(7)
             scores[current_player] += marble + circle.popleft()
         current_player = (current_player + 1) % NUM_PLAYERS
-    return int(max(scores))
+    return max(scores)
 
 print("Part 1: ", play(LAST_MARBLE))
 print("Part 2: ", play(LAST_MARBLE * 100))
