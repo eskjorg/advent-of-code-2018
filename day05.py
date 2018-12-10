@@ -1,5 +1,4 @@
-from string import ascii_lowercase as alphabet
-import numpy as np
+import string
 
 with open('data/input05.txt', 'r') as f:
     DATA_STR = f.readline().rstrip()
@@ -16,4 +15,4 @@ def react(polymer, unit=''):
     return(len(polymer))
 
 print("Part 1: ", react(DATA_STR))
-print("Part 2: ", min([react(DATA_STR, alpha) for alpha in alphabet]))
+print("Part 2: ", min([react(DATA_STR, alpha) for alpha in string.ascii_lowercase]))
