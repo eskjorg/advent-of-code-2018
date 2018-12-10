@@ -15,4 +15,4 @@ def react(polymer, unit=''):
     return(len(polymer))
 
 print("Part 1: ", react(DATA_STR))
-print("Part 2: ", min([react(DATA_STR, alpha) for alpha in string.ascii_lowercase]))
+print("Part 2: ", min(react(DATA_STR, alpha) for alpha in string.ascii_lowercase))

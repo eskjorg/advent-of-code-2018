@@ -17,7 +17,7 @@ class Node:
         return self.n_children == len(self.children)
 
     def sum_recursive(self):
-        sum_children = [child.sum_recursive() for child in self.children]
+        sum_children = (child.sum_recursive() for child in self.children)
         return sum(self.metadata) + sum(sum_children) 
 
     def value(self):
